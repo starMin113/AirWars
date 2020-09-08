@@ -1,0 +1,17 @@
+{
+    "Main":[
+        
+    ],
+    "GameLoop":[
+        "game/Game",
+        "game/prop",
+        "game/hudun",
+        "game/BombEffect",
+        "game/hit",
+        "game/BossBombEffect",
+        "game/BombEffect1",
+        "game/animate/GameFury",
+        "base/skill/daodanbaozha"
+    ]
+  
+}
