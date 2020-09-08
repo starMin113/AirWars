@@ -1,0 +1,56 @@
+{
+  "ver": "1.2.4",
+  "uuid": "d59ce1d6-3502-4730-91eb-e9613d13e2aa",
+  "rawTextureUuid": "c4d49504-50c6-4c98-8819-9d598522420c",
+  "size": {
+    "width": 1024,
+    "height": 1024
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "waihuan2.png": {
+      "ver": "1.0.4",
+      "uuid": "88577ef6-f1de-44e7-9b55-ad82cc01bfd4",
+      "rawTextureUuid": "c4d49504-50c6-4c98-8819-9d598522420c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 180,
+      "height": 180,
+      "rawWidth": 180,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    },
+    "waihuan.png": {
+      "ver": "1.0.4",
+      "uuid": "03cbdcff-f2a8-4833-ae3d-9cc09810d755",
+      "rawTextureUuid": "c4d49504-50c6-4c98-8819-9d598522420c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 182,
+      "width": 275,
+      "height": 278,
+      "rawWidth": 275,
+      "rawHeight": 278,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

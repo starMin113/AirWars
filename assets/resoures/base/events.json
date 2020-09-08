@@ -1,0 +1,30 @@
+{
+    "event1":{
+        "prefab" : "event", 
+        "type":1,	
+        "blood" : 10000, 
+        "score" :100,
+        "keepTime" : true,
+        "status":{
+            "0":{"delay":0,"time":1.2,"path":"moveInLeft","pathFlip":{"x":false,"y":false}},
+            "1":{"delay":0,"action":"mb,2,100,200","time":2,"skill":{
+                "0":[
+                    {"name":"level1_300","attack":20,"delay":0,"isLong":1,"rect":[-20,-20,40,40],"offset":0},
+                    {"name":"level1_300","attack":20,"delay":2,"isLong":1,"rect":[-20,-20,40,40],"offset":0}
+                ]
+            }},
+            "2":{"delay":0,"action":"mb,4,-100,-200","time":4,"skill":{
+                "0":[
+                    {"name":"level1_300","attack":20,"delay":0,"r":30,"rect":[-20,-20,40,40],"offset":0},
+                    {"name":"level1_300","attack":20,"delay":0,"r":-30,"rect":[-20,-20,40,40],"offset":0},
+                    {"name":"level1_300","attack":20,"delay":2,"r":30,"rect":[-20,-20,40,40],"offset":0},
+                    {"name":"level1_300","attack":20,"delay":2,"r":-30,"rect":[-20,-20,40,40],"offset":0}
+                ]
+            }},
+            "3":{"delay":0,"time":1.2,"path":"moveInLeft","pathFlip":{"x":false,"y":true}}
+        }
+    }
+}
+
+
+                
