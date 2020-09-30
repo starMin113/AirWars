@@ -1,0 +1,8 @@
+{
+    "eventId" : 1, 
+    "condition":1,   
+    "frameIdx":100, 
+    "duration" :100,
+    "rule":"sin",
+    "interval":1
+}
