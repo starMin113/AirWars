@@ -22,7 +22,6 @@ export default class BulletEditor extends cc.Component {
     @property(cc.Node)
     bulletCon: cc.Node = null;
     // LIFE-CYCLE CALLBACKS:
-
     // onLoad () {}
 
     start() {

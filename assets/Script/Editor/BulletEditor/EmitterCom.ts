@@ -15,8 +15,6 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class EmitterCom extends cc.Component {
     @property
-    text: string = 'hello';
-    @property
     startFrameIdx: number = 0;
     @property
     endFrameIdx: number = 0;
@@ -38,9 +36,9 @@ export default class EmitterCom extends cc.Component {
     private timespan: number = 0;
     start() {
         this.isWork = false;
-        cc.loader.loadRes("Bullet/BulletGreen", cc.Prefab, (error, prefab) => {
+        cc.loader.loadRes("Bullet/bullet_001", cc.Prefab, (error, prefab) => {
             if (error) {
-
+                cc.log("bullet_001:"+error);
             } else {
                 this.prefab = prefab;
                 this.isWork = true;
@@ -53,17 +51,16 @@ export default class EmitterCom extends cc.Component {
         if (!this.isWork) return;
         let bulletNode = cc.instantiate(this.prefab);
         let bulletCom = bulletNode.getComponent(BulletCom);
-        bulletCom.di(this);
+        bulletCom.run(this);
         this.isWork = false;
         return bulletNode;
     }
 
     update(dt) {
         this.timespan += dt;
-        if (this.timespan >= 200) {
+        if (this.timespan >= 5) {
             this.timespan = 0;
             this.isWork = true;
-
         }
     }
 }

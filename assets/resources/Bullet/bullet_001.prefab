@@ -116,13 +116,16 @@
       "__id__": 1
     },
     "_enabled": true,
-    "speed": 0,
-    "acc": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "endFrameIdx": 60,
+    "speed": 1,
+    "acc": 1,
+    "acc_dir": 0,
+    "endFrameIdx": 1000,
+    "opaque": false,
+    "outOfScreenDel": false,
+    "reback_times": 0,
+    "scaleX": 0,
+    "scaleY": 0,
+    "layer": 0,
     "boomEffect": {
       "__uuid__": "094d1398-ae4b-4c17-91c9-8a5ef0392faa"
     },
