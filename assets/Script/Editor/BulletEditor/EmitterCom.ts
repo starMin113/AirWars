@@ -58,7 +58,7 @@ export default class EmitterCom extends cc.Component {
 
     update(dt) {
         this.timespan += dt;
-        if (this.timespan >= 5) {
+        if (this.timespan >= 10000) {
             this.timespan = 0;
             this.isWork = true;
         }
