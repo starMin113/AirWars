@@ -1,10 +1,10 @@
 {
     "eventId" : 1, 
     "condition":1,   
-    "frameIdx":100, 
-    "duration" :700,
+    "frameIdx":30, 
+    "duration" :120,
     "changeType":2,
-    "addVal":360,
+    "addVal":20,
     "interval":1,
-    "eventType":107
+    "eventType":106
 }

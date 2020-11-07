@@ -132,9 +132,6 @@
     "events": [
       {
         "__uuid__": "5bd4bc08-b667-4d54-a0b7-edbef6698878"
-      },
-      {
-        "__uuid__": "6e95a6a8-214d-4c8f-9925-e95a85a8a0bb"
       }
     ],
     "_id": ""
@@ -145,7 +142,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "e6a0504f-f89d-49c3-952d-57e7949b93dc"
+      "__uuid__": "2ab353d9-a6b2-466d-b7d5-2a9557e23a47"
     },
     "fileId": "78XfTEuEhOpLZALDsEDycv",
     "sync": false

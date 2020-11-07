@@ -10,6 +10,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import EmitterCom from "./EmitterCom";
+import EmitterEditorCom from "./EmitterCom";
 
 const { ccclass, property } = cc._decorator;
 
@@ -30,8 +31,10 @@ export default class BulletEditor extends cc.Component {
 
     update(dt) {
         if (this.emitterNode.isWork) {
-            let bulletTmp: cc.Node = this.emitterNode.generate();
-            this.bulletCon.addChild(bulletTmp);
+            let lst = this.emitterNode.doWork();
+            for (let i = 0, cnt = lst.length; i < cnt; i++) {
+                this.bulletCon.addChild(lst[i]);
+            }
         }
     }
 }

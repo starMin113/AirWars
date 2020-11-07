@@ -1,9 +1,10 @@
 import { EBattleLayer } from "../../Enums/EBattleLayer";
 import { EEventType } from "../../Enums/EEventType";
 import { Util } from "../../Game/Mix/Util";
-import EmitterCom from "./EmitterCom";
+import EmitterEditorCom from "./EmitterCom";
+import { PropCom, PropEvent } from "./PropCom";
 
-class BulletEvent {
+class BulletEvent extends PropEvent {
     private bulletCom: BulletCom;
     private startFrame: number;
     private finishFrame: number
@@ -16,6 +17,7 @@ class BulletEvent {
     private end: number;
     private add: number;
     constructor(bullet: BulletCom, rawJson: any) {
+        super();
         this.bulletCom = bullet;
         let dataJson = rawJson.json;
         this.startFrame = parseInt(dataJson.frameIdx);
@@ -36,7 +38,6 @@ class BulletEvent {
         this.interval = parseInt(dataJson.interval);
         let addVal = parseInt(dataJson.addVal);
         if (this.changeType == 1 || this.changeType == 2) {
-            this.begin = this.getBegin(this.eventType);
             this.end = addVal;
         }
         else if (this.changeType == 3) {
@@ -48,9 +49,9 @@ class BulletEvent {
     private getBegin(eventType: number): number {
         let begin: number = 0;
         switch (eventType) {
-            case EEventType.Speed: begin = this.bulletCom.speed; break;
-            case EEventType.SpeedDir: begin = this.bulletCom.speed_dir; break;
-            case EEventType.Acr: begin = this.bulletCom.acc; break;
+            case EEventType.BulletSpeed: begin = this.bulletCom.speed; break;
+            case EEventType.BulletSpeedDir: begin = this.bulletCom.speed_dir; break;
+            case EEventType.BulletAcr: begin = this.bulletCom.acc; break;
             case EEventType.BulletSpeedDir: begin = this.bulletCom.acc_dir; break;
         }
         return begin;
@@ -58,14 +59,17 @@ class BulletEvent {
     public update(): void {
         let currFrameIdx = this.bulletCom.currIdx;
         let per = (currFrameIdx - this.startFrame) / (this.finishFrame - this.startFrame);
+        if (currFrameIdx == this.startFrame) {
+            this.begin = this.getBegin(this.eventType);
+        }
         if (currFrameIdx >= this.startFrame && currFrameIdx <= this.finishFrame) {
             if (this.changeType == 1) {
-                cc.log("per:"+per);
+                // cc.log("per:"+per);
                 this.updateProper1or2(Util.lerp(this.begin, this.end, per));
             }
             else if (this.changeType == 2) {
-                let sinVal = Math.sin(per*(Math.PI / 2));
-                cc.log("sinVal:"+sinVal);
+                let sinVal = Math.sin(per * (Math.PI / 2));
+                //  cc.log("sinVal:"+sinVal);
                 this.updateProper1or2(Util.lerp(this.begin, this.end, per));
             }
             if (this.changeType == 3) {
@@ -117,10 +121,6 @@ class BulletEvent {
         }
     }
 
-
-
-
-
     // private checkPlus():boolean{
     //     return this.condition===1&&this.bulletCom.currIdx>this.;
     // }
@@ -136,17 +136,7 @@ class BulletEvent {
 
 const { ccclass, property } = cc._decorator;
 @ccclass
-export class BulletCom extends cc.Component {
-
-    @property
-    public speed: number = 0;
-
-    @property
-    public acc: number = 0;
-
-    @property
-    public acc_dir: number = 0;
-
+export class BulletCom extends PropCom {
     @property
     endFrameIdx: number = 0;
 
@@ -169,49 +159,14 @@ export class BulletCom extends cc.Component {
 
     @property(cc.Prefab)
     boomEffect: cc.Prefab;
-
-    @property(cc.JsonAsset)
-    events: any[] = [];
-
-    private currFrameIdx: number = 0;
-    private velocity: cc.Vec2 = cc.Vec2.ZERO;
-    private eventlist: BulletEvent[];
-    public emitter: EmitterCom;
+    public emitter: EmitterEditorCom;
     public lifeCycle: number;
-    public speed_dir: number = 0;
 
-
-    public get currIdx() {
-        return this.currFrameIdx;
-    }
     onLoad() {
         this.eventlist = [];
         for (let i = 0, len = this.events.length; i < len; i++) {
             this.eventlist.push(new BulletEvent(this, this.events[i]));
         }
-    }
-    update(dt) {
-        this.currFrameIdx++;
-        for (let i = 0, len = this.eventlist.length; i < len; i++) {
-            this.eventlist[i].update();
-        }
-        //cc.log("angle:" + this.speed_dir);
-        this.node.angle = this.speed_dir;
-        let acc: cc.Vec2 = this.toDir(this.acc, this.acc_dir);
-        let speed_vec2: cc.Vec2 = this.toDir(this.speed, this.speed_dir);
-        speed_vec2 = speed_vec2.add(acc);
-        this.node.x += speed_vec2.x;
-        this.node.y += speed_vec2.y;
-        // this.printVec2("velocity", speed_vec2);
-        if (this.currFrameIdx >= this.endFrameIdx) {
-            this.node.removeFromParent();
-            return;
-        }
-        this.speed = speed_vec2.mag();
-    }
-
-    printVec2(tag: string, v2: cc.Vec2): void {
-        cc.log(tag + "x: " + v2.x + "y：" + v2.y);
     }
 
     onDestroy() {
@@ -223,20 +178,14 @@ export class BulletCom extends cc.Component {
         this.eventlist = null;
     }
 
-    public run(emmiter: EmitterCom) {
-        this.node.x = emmiter.node.x;
-        this.node.y = emmiter.node.y;
+    public run(emmiter: EmitterEditorCom, beginPos: cc.Vec2, dir: number) {
+        this.node.setPosition(beginPos);
         //   this.acc = cc.v2(0.01, 0.01);
         // this.node.angle=dir.signAngle(cc.Vec2.ZERO);
-        let degree = 10;
-        this.node.angle = degree;
+        this.speed_dir = dir;
+        this.node.angle = this.speed_dir;
 
     }
 
-    private toDir(mag: number, degree: number): cc.Vec2 {
-        let angle = degree / 180 * Math.PI;
-        let x = Math.cos(angle) * mag;
-        let y = Math.sin(angle) * mag;
-        return cc.v2(x, y);
-    }
+
 }
