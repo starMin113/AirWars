@@ -10,7 +10,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import EmitterCom from "./EmitterCom";
-import EmitterEditorCom from "./EmitterCom";
+
 
 const { ccclass, property } = cc._decorator;
 

@@ -57,10 +57,18 @@ class EmitterEvent extends PropEvent {
     private getBegin(eventType: number): number {
         let begin: number = 0;
         switch (eventType) {
-            case EEventType.BulletSpeed: begin = this.emitterCom.speed; break;
-            case EEventType.BulletSpeedDir: begin = this.emitterCom.speed_dir; break;
-            case EEventType.BulletAcr: begin = this.emitterCom.acc; break;
-            case EEventType.BulletSpeedDir: begin = this.emitterCom.acc_dir; break;
+            case EEventType.IfFollow: begin = this.emitterCom.is_bind ? 1 : 0; break;
+            case EEventType.Speed: begin = this.emitterCom.speed; break;
+            case EEventType.SpeedDir: begin = this.emitterCom.speed_dir; break;
+            case EEventType.Acc: begin = this.emitterCom.acc; break;
+            case EEventType.AccDir: begin = this.emitterCom.acc_dir; break;
+            case EEventType.Diffuse_Spread: begin = this.emitterCom.spread; break;
+            case EEventType.Diffuse_Rotate: begin = this.emitterCom.spread_rotate; break;
+            case EEventType.Count: begin = this.emitterCom.count; break;
+            case EEventType.Interval: this.emitterCom.interval; break;
+            case EEventType.Skew: this.emitterCom.skew; break;
+            case EEventType.Range: this.emitterCom.range; break;
+            case EEventType.Axis: this.emitterCom.axis; break;
         }
         return begin;
     }
@@ -88,44 +96,80 @@ class EmitterEvent extends PropEvent {
     }
 
     private updateProper3(): void {
-        if (this.eventType == EEventType.BulletSpeed) {
+        if (this.eventType == EEventType.IfFollow) {
+            this.emitterCom.is_bind = this.add == 1;
+        }
+        else if (this.eventType == EEventType.Speed) {
             this.emitterCom.speed += this.add;
         }
-        else if (this.eventType == EEventType.BulletAcr) {
-            this.emitterCom.acc += this.add;
-        }
-        else if (this.eventType == EEventType.BulletAcrDir) {
-            this.emitterCom.acc_dir += this.add;
-        }
-        else if (this.eventType == EEventType.BulletSpeedDir) {
+        else if (this.eventType == EEventType.SpeedDir) {
             this.emitterCom.speed_dir += this.add;
         }
-        else if (this.eventType == EEventType.LifeCycle) {
-
+        else if (this.eventType == EEventType.Acc) {
+            this.emitterCom.acc += this.add;
         }
-        else if (this.eventType == EEventType.GreenColor) {
-
+        else if (this.eventType == EEventType.AccDir) {
+            this.emitterCom.acc_dir += this.add;
+        }
+        else if (this.eventType == EEventType.Diffuse_Spread) {
+            this.emitterCom.spread += this.add;
+        }
+        else if (this.eventType == EEventType.Diffuse_Rotate) {
+            this.emitterCom.spread_rotate += this.add;
+        }
+        else if (this.eventType == EEventType.Count) {
+            this.emitterCom.count += this.add;
+        }
+        else if (this.eventType == EEventType.Interval) {
+            this.emitterCom.interval += this.add;
+        }
+        else if (this.eventType == EEventType.Skew) {
+            this.emitterCom.skew += this.add;
+        }
+        else if (this.eventType == EEventType.Range) {
+            this.emitterCom.range += this.add;
+        }
+        else if (this.eventType == EEventType.Axis) {
+            this.emitterCom.axis + this.add;
         }
     }
 
     private updateProper1or2(val): void {
-        if (this.eventType == EEventType.BulletSpeed) {
+        if (this.eventType == EEventType.IfFollow) {
+            this.emitterCom.is_bind = val == 1;
+        }
+        else if (this.eventType == EEventType.Speed) {
             this.emitterCom.speed = val;
         }
-        else if (this.eventType == EEventType.BulletAcr) {
-            this.emitterCom.acc = val;;
+        else if (this.eventType == EEventType.SpeedDir) {
+            this.emitterCom.speed_dir = val;
         }
-        else if (this.eventType == EEventType.BulletAcrDir) {
-            this.emitterCom.acc_dir = val;;
+        else if (this.eventType == EEventType.Acc) {
+            this.emitterCom.acc = val;
         }
-        else if (this.eventType == EEventType.BulletSpeedDir) {
-            this.emitterCom.speed_dir = val;;
+        else if (this.eventType == EEventType.AccDir) {
+            this.emitterCom.acc_dir = val;
         }
-        else if (this.eventType == EEventType.LifeCycle) {
-
+        else if (this.eventType == EEventType.Diffuse_Spread) {
+            this.emitterCom.spread = val;
         }
-        else if (this.eventType == EEventType.GreenColor) {
-
+        else if (this.eventType == EEventType.Diffuse_Rotate) {
+            this.emitterCom.spread_rotate = val;
+        }
+        else if (this.eventType == EEventType.Count) {
+            this.emitterCom.count = val;
+        }
+        else if (this.eventType == EEventType.Interval) {
+            this.emitterCom.interval = val;
+        }
+        else if (this.eventType == EEventType.Skew) {
+            this.emitterCom.skew = val;
+        }
+        else if (this.eventType == EEventType.Range) {
+            this.emitterCom.range = val;
+        }
+        else if (this.eventType == EEventType.Axis) {
+            this.emitterCom.axis = val;
         }
     }
 
@@ -146,6 +190,16 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class EmitterCom extends PropCom {
     @property
+    public speed: number = 0;
+    @property
+    public acc: number = 0;
+    @property
+    public acc_dir: number = 0;
+    @property
+    public speed_dir: number = 0;
+    @property(cc.JsonAsset)
+    events: any[] = [];
+    @property
     startIdx: number = 0;
     @property
     pauseIdx: number = 0;
@@ -156,8 +210,6 @@ export default class EmitterCom extends PropCom {
     @property
     is_bind: boolean = false;
     @property
-    dirDegree: number = 0;
-    @property
     spread: number = 0;
     @property
     spread_rotate = 0;
@@ -166,7 +218,7 @@ export default class EmitterCom extends PropCom {
     @property
     interval: number = 0;
     @property
-    init_dir: number = 0;
+    skew: number = 0;
     @property
     range: number = 360;
     @property
@@ -174,9 +226,6 @@ export default class EmitterCom extends PropCom {
 
     @property(cc.Prefab)
     bullet_prefab: cc.Prefab;
-
-    @property(cc.JsonAsset)
-    events: any[] = [];
 
     public isWork: boolean = false;
     private _lastCreateIdx: number = 0;
@@ -202,11 +251,11 @@ export default class EmitterCom extends PropCom {
         // }
         //let deltaRad: number = 2 * Math.PI / this.count;
         let deltaDegree: number = this.range > 0 ? (this.range / (this.count + 1)) : (360 / this.count);
-        let beginDegree: number = this.range > 0 ? (this.axis - this.range / 2) : 0;
-        cc.log("deltaD" + deltaDegree + "beginD" + beginDegree);
+        let beginDegree: number = this.range > this.spread_rotate ? (this.axis - this.range / 2) : 0;
+        // cc.log("deltaD" + deltaDegree + "beginD" + beginDegree);
         for (let i = 0; i < this.count; i++) {
             let degree: number = beginDegree + this.range > 0 ? ((i + 1) * deltaDegree) : (i * deltaDegree);
-            cc.log("degree:" + degree);
+            // cc.log("degree:" + degree);
             let rad = (degree * Math.PI) / 180;
             let y: number = Math.sin(rad) * this.spread;
             let x: number = Math.cos(rad) * this.spread;
@@ -214,20 +263,12 @@ export default class EmitterCom extends PropCom {
             dot = center.add(dot);
             let bulletNode = cc.instantiate(this.bullet_prefab);
             let bulletCom = bulletNode.getComponent(BulletCom);
-            bulletCom.run(this, dot, degree + this.init_dir);
+            bulletCom.run(this, dot, degree + this.skew);
             lst.push(bulletNode);
         }
         this._lastCreateIdx = this._currIdx;
         return lst;
     }
-
-    private onCreate() {
-        //let dotList: cc.Vec2[] = [];
-
-
-    }
-
-
     onLoad() {
         this.eventlist = [];
         for (let i = 0, len = this.events.length; i < len; i++) {
@@ -238,6 +279,7 @@ export default class EmitterCom extends PropCom {
 
     update(dt) {
         super.update(dt);
+        return;
         if (this._currIdx % this.startIdx == 0) {
             this.isWork = true;
         }

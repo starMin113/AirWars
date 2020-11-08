@@ -7,21 +7,15 @@ export class PropEvent {
     }
 }
 export class PropCom extends cc.Component {
-    @property
     public speed: number = 0;
-
-    @property
     public acc: number = 0;
-
-    @property
     public acc_dir: number = 0;
-
-    @property(cc.JsonAsset)
+    public speed_dir: number = 0;
     events: any[] = [];
 
     protected eventlist: PropEvent[];
     protected _currIdx: number = 0;
-    public speed_dir: number = 90;
+ 
 
     public get currIdx() {
         return this._currIdx;
@@ -39,11 +33,13 @@ export class PropCom extends cc.Component {
         //cc.log("angle:" + this.speed_dir);
         this.node.angle = this.speed_dir;
         let acc: cc.Vec2 = this.toDir(this.acc, this.acc_dir);
+        this.printVec2("acc",acc);
         let speed_vec2: cc.Vec2 = this.toDir(this.speed, this.speed_dir);
         speed_vec2 = speed_vec2.add(acc);
         this.node.x += speed_vec2.x;
         this.node.y += speed_vec2.y;
-        //this.printVec2("velocity", speed_vec2);
+        this.printVec2("velocity", speed_vec2);
+        this.printVec2("nodePos",this.node.getPosition());
         if (this.checkToRemove()) {
             this.node.removeFromParent();
             return;

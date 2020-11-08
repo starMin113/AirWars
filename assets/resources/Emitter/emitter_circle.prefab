@@ -116,15 +116,17 @@
       "__id__": 1
     },
     "_enabled": true,
+    "speed": 0.1,
+    "acc": 30,
+    "acc_dir": 1,
+    "speed_dir": 0,
+    "events": [],
     "startIdx": 60,
     "pauseIdx": 180,
     "resumeIdx": 240,
     "lifeCyle": "",
-    "is_bind": false,
-    "speed": 0,
+    "is_bind": true,
     "dirDegree": 0,
-    "acc": 0,
-    "acc_dir": 0,
     "spread": 100,
     "spread_rotate": 0,
     "count": 4,
@@ -135,7 +137,6 @@
     "bullet_prefab": {
       "__uuid__": "ae2fa492-46c9-4dac-ba41-1776df5f73b2"
     },
-    "events": [],
     "_id": ""
   },
   {

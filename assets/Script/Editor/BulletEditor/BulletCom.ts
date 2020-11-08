@@ -138,6 +138,18 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export class BulletCom extends PropCom {
     @property
+    public speed: number = 0;
+
+    @property
+    public acc: number = 0;
+
+    @property
+    public acc_dir: number = 0;
+
+    @property(cc.JsonAsset)
+    events: any[] = [];
+    
+    @property
     endFrameIdx: number = 0;
 
     @property
