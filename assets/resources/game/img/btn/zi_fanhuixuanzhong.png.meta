@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "1b407b8c-e413-466e-85b9-272a31019429",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 270,
+  "height": 68,
   "platformSettings": {},
   "subMetas": {
     "zi_fanhuixuanzhong": {

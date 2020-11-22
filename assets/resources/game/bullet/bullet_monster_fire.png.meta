@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "4a60d302-e812-4ae7-a0a1-dee3be1a4420",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 68,
+  "height": 68,
   "platformSettings": {},
   "subMetas": {
     "bullet_monster_fire": {

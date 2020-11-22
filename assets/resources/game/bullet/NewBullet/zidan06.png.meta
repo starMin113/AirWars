@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "39c84960-44b8-4f13-b4e7-90329a9dd7d1",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 156,
+  "height": 155,
   "platformSettings": {},
   "subMetas": {
     "zidan06": {

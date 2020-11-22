@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "404fc8ea-327f-44a9-87d9-11d01d87caf9",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 270,
+  "height": 68,
   "platformSettings": {},
   "subMetas": {
     "videobtn1": {

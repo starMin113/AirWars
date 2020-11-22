@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "b3eefa4e-39d5-4b59-89dc-ed1c95d3a7a3",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 126,
+  "height": 126,
   "platformSettings": {},
   "subMetas": {
     "zhishikuang": {

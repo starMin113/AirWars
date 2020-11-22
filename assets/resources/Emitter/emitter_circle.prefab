@@ -51,8 +51,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -60.2,
-        1.59,
+        -51.665,
+        -45.843,
         0,
         0,
         0,
@@ -117,21 +117,20 @@
     },
     "_enabled": true,
     "speed": 0.1,
-    "acc": 30,
-    "acc_dir": 1,
-    "speed_dir": 0,
+    "acc": 0.01,
+    "acc_dir": 45,
+    "speed_dir": 45,
     "events": [],
     "startIdx": 60,
-    "pauseIdx": 180,
-    "resumeIdx": 240,
+    "duration": 120,
+    "sleep": 60,
     "lifeCyle": "",
     "is_bind": true,
-    "dirDegree": 0,
     "spread": 100,
     "spread_rotate": 0,
     "count": 4,
     "interval": 18,
-    "init_dir": 0,
+    "skew": 0,
     "range": 0,
     "axis": 90,
     "bullet_prefab": {
@@ -147,7 +146,7 @@
     "asset": {
       "__uuid__": "d6b443fb-4c63-400a-b826-c4a7cd15559f"
     },
-    "fileId": "19rOWtSglBeZp+GdJjTEwX",
+    "fileId": "",
     "sync": false
   }
 ]

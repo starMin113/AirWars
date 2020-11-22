@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "0c4d1581-f1f5-4df8-a7d1-27820c79a48a",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 150,
+  "height": 142,
   "platformSettings": {},
   "subMetas": {
     "villain3": {

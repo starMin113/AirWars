@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "4fe2fc2c-6d46-4b72-b8e9-23e2e450ebc6",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 228,
+  "height": 228,
   "platformSettings": {},
   "subMetas": {
     "jiguangda1": {

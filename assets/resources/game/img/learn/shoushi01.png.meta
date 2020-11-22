@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "4e07ea88-7dc2-4b1c-a9ef-08c484c011ff",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 134,
+  "height": 185,
   "platformSettings": {},
   "subMetas": {
     "shoushi01": {

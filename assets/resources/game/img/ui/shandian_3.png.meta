@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "c936ec4f-e769-4e1b-a61c-c79593cdb906",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 540,
+  "height": 234,
   "platformSettings": {},
   "subMetas": {
     "shandian_3": {

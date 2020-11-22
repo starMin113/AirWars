@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "16b11d42-4262-42b7-bacb-0a306b322358",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 167,
+  "height": 167,
   "platformSettings": {},
   "subMetas": {
     "Bullet_hero02_auxiliary01": {

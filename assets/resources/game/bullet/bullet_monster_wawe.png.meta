@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "ce501bae-2a1e-469d-8ab6-a0ef74a7b4c0",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 92,
+  "height": 92,
   "platformSettings": {},
   "subMetas": {
     "bullet_monster_wawe": {

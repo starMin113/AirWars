@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "58759a1e-00fc-44e2-bb5c-9dae7b9e384d",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 61,
+  "height": 64,
   "platformSettings": {},
   "subMetas": {
     "coin_03_2": {

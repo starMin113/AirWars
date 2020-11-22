@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "497e3a11-5f33-47f3-94d5-6d3d147fc08c",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 376,
+  "height": 42,
   "platformSettings": {},
   "subMetas": {
     "tuijian": {

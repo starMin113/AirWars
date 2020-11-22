@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "dac1f018-9b45-44b5-b95f-199567c5549c",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 268,
+  "height": 52,
   "platformSettings": {},
   "subMetas": {
     "bossEnter_3": {

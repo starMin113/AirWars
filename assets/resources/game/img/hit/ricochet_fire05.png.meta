@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "0426612f-1675-4f43-a20c-36102b44e16b",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 349,
+  "height": 316,
   "platformSettings": {},
   "subMetas": {
     "ricochet_fire05": {

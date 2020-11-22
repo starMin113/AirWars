@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "4871ba2a-51c8-4059-8e0a-a03c7b8c62e8",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 291,
+  "height": 134,
   "platformSettings": {},
   "subMetas": {
     "weixiantishi_huojinaqun": {

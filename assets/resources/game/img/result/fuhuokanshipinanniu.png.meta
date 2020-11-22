@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "943c7b79-73d6-4499-bdac-08fa4bb8bbf6",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 299,
+  "height": 306,
   "platformSettings": {},
   "subMetas": {
     "fuhuokanshipinanniu": {

@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "a763b42e-2d6b-4917-b75c-75e03e772647",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 369,
+  "height": 116,
   "platformSettings": {},
   "subMetas": {
     "taitou_meirilibao": {

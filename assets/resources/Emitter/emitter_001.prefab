@@ -51,8 +51,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -60.2,
-        151.59,
+        0,
+        0,
         0,
         0,
         0,
@@ -116,25 +116,26 @@
       "__id__": 1
     },
     "_enabled": true,
-    "startIdx": 60,
-    "pauseIdx": 180,
-    "resumeIdx": 240,
-    "lifeCyle": "",
-    "is_bind": false,
     "speed": 0,
-    "dirDegree": 0,
     "acc": 0,
     "acc_dir": 0,
+    "speed_dir": 0,
+    "events": [],
+    "startIdx": 60,
+    "duration": 0,
+    "sleep": 0,
+    "lifeCyle": "",
+    "is_bind": false,
     "spread": 100,
     "spread_rotate": 0,
     "count": 5,
     "interval": 18,
-    "init_dir": 0,
+    "skew": 0,
     "range": 0,
+    "axis": 0,
     "bullet_prefab": {
       "__uuid__": "ae2fa492-46c9-4dac-ba41-1776df5f73b2"
     },
-    "events": [],
     "_id": ""
   },
   {
@@ -143,9 +144,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "aff0acf9-d974-41d0-a5de-5e6c067fc647"
+      "__uuid__": "f85f4c30-ee22-4647-af44-69e73db25d13"
     },
-    "fileId": "19rOWtSglBeZp+GdJjTEwX",
+    "fileId": "",
     "sync": false
   }
 ]

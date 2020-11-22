@@ -17,7 +17,7 @@ class EmitterEvent extends PropEvent {
     private startFrame: number;
     private finishFrame: number
     private condition: number;
-    private eventType: number;
+    private eventType: string;
     private eventId: number;
     private interval: number;
     private changeType: number;
@@ -31,7 +31,7 @@ class EmitterEvent extends PropEvent {
         this.startFrame = parseInt(dataJson.frameIdx);
         this.condition = dataJson.condition;
         this.eventId = dataJson.eventId;
-        this.eventType = parseInt(dataJson.eventType);
+        this.eventType = (dataJson.eventType);
         let duration = parseInt(dataJson.duration);
         if (this.condition === 1) {
             this.finishFrame = this.startFrame + duration;
@@ -54,7 +54,7 @@ class EmitterEvent extends PropEvent {
 
     }
 
-    private getBegin(eventType: number): number {
+    private getBegin(eventType: string): number {
         let begin: number = 0;
         switch (eventType) {
             case EEventType.IfFollow: begin = this.emitterCom.is_bind ? 1 : 0; break;
@@ -202,9 +202,9 @@ export default class EmitterCom extends PropCom {
     @property
     startIdx: number = 0;
     @property
-    pauseIdx: number = 0;
+    duration: number = 0;
     @property
-    resumeIdx: number = 0;
+    sleep: number = 0;
     @property
     lifeCyle: string = "";
     @property
@@ -279,16 +279,18 @@ export default class EmitterCom extends PropCom {
 
     update(dt) {
         super.update(dt);
-        return;
-        if (this._currIdx % this.startIdx == 0) {
+        let tmpIdx = this._currIdx - this.startIdx;
+        let modIdx = tmpIdx % (this.duration + this.sleep);
+        if (modIdx == 0) {
             this.isWork = true;
         }
-        if (this._currIdx % this.pauseIdx == 0) {
+        else if (modIdx == this.duration) {
             this.isWork = false;
+        } 
+        else {
+
         }
-        if (this._currIdx % this.resumeIdx == 0) {
-            this.isWork = true;
-        }
+
 
     }
 }

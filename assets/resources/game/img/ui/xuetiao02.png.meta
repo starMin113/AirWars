@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "e7550a57-a623-4dad-ae25-c076a882b3f7",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 332,
+  "height": 55,
   "platformSettings": {},
   "subMetas": {
     "xuetiao02": {

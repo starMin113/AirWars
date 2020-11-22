@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "1830fdc2-ade5-45b6-97d6-2dd8e4b19aa3",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 150,
+  "height": 469,
   "platformSettings": {},
   "subMetas": {
     "liuxinghong": {

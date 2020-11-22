@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "72407943-962c-4473-97ad-b71a4c6f8fa5",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 98,
+  "height": 94,
   "platformSettings": {},
   "subMetas": {
     "youxianniu_hudunkai": {

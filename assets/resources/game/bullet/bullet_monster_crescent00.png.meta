@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "8b01dff2-02e6-4bc9-bcce-d6926c73fec0",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 68,
+  "height": 68,
   "platformSettings": {},
   "subMetas": {
     "bullet_monster_crescent00": {

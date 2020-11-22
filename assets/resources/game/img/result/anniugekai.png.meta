@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "d823388e-0cbf-4246-9990-f7df36eb2037",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 401,
+  "height": 130,
   "platformSettings": {},
   "subMetas": {
     "anniugekai": {

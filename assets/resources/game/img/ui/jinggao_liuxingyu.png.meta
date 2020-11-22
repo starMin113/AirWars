@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "cebdb61d-546d-43cc-8a9d-c8195f6a6670",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 104,
+  "height": 112,
   "platformSettings": {},
   "subMetas": {
     "jinggao_liuxingyu": {

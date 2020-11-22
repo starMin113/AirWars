@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "6ff15e67-0fd3-4e44-9ba0-89a527b3ff9b",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 100,
+  "height": 97,
   "platformSettings": {},
   "subMetas": {
     "zidanjizhong04": {
